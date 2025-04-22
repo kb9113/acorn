@@ -113,8 +113,8 @@ setup_instance_and_setup_debug_layers :: proc(device_context : ^DeviceContext, n
     debug_messenger_create_info.messageSeverity = {
         vk.DebugUtilsMessageSeverityFlagsEXT.ERROR,
         vk.DebugUtilsMessageSeverityFlagEXT.WARNING,
-        // vk.DebugUtilsMessageSeverityFlagEXT.VERBOSE,
-        // vk.DebugUtilsMessageSeverityFlagEXT.INFO,
+        vk.DebugUtilsMessageSeverityFlagEXT.VERBOSE,
+        vk.DebugUtilsMessageSeverityFlagEXT.INFO,
     }
     debug_messenger_create_info.messageType = {
         vk.DebugUtilsMessageTypeFlagEXT.GENERAL,

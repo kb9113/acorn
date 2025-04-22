@@ -238,6 +238,8 @@ copy_image_to_new_host_coherent_buffer :: proc(
         case [4]u8: assert(image.format == vk.Format.R8G8B8A8_UNORM ||
             image.format == vk.Format.R8G8B8A8_SRGB
         )
+        case [4]u16: assert(image.format == vk.Format.R16G16B16A16_UNORM)
+        case [4]f32: assert(image.format == vk.Format.R32G32B32A32_SFLOAT)
         case: panic("image format not supported for coppy")
     }
 

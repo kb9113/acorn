@@ -196,10 +196,11 @@ create_top_level_acceleration_structure :: proc(
                 acceleration_structure.transform.mat[x][y] = bottom_level_acceleration_structures[i].transform[x, y]
             }
         }
-        fmt.println(acceleration_structure.transform.mat)
 
-        acceleration_structure.instanceCustomIndexAndMask = (u32(0xFF) << 24) | 0
-        acceleration_structure.instanceShaderBindingTableRecordOffsetAndFlags = u32(vk.GeometryInstanceFlagKHR.TRIANGLE_FACING_CULL_DISABLE) << 24 | 0
+        //acceleration_structure.instanceCustomIndexAndMask = (u32(0xFF) << 24) | 0
+        acceleration_structure.mask = u32(0xFF)
+        //acceleration_structure.instanceShaderBindingTableRecordOffsetAndFlags = u32(vk.GeometryInstanceFlagKHR.TRIANGLE_FACING_CULL_DISABLE) << 24 | 0
+        acceleration_structure.flags = vk.GeometryInstanceFlagKHR.TRIANGLE_FACING_CULL_DISABLE
         acceleration_structure.accelerationStructureReference = u64(get_acceleration_structure_device_address(
             device_context, bottom_level_acceleration_structures[i].acceleration_structure.acceleration_structure
         ))

@@ -1,4 +1,7 @@
 # Acorn
+
+Searchable documentation is available at https://calebmanning.net/acorn/. \
+\
 This is a wrapper around vulkan used by bonsai_rt
 
 ## Resources
